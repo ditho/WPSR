@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+    <primitive>false</primitive>
+    <delegateAnalysisEngineSpecifiers>
+        <delegateAnalysisEngine key="WPSRInformationEvaluatorAnnotator">
+            <import location="../analysis_engine/WPSRInformationEvaluatorAnnotator.xml" />
+        </delegateAnalysisEngine>
+        <delegateAnalysisEngine key="WPSRInformationCollectorAnnotator">
+            <import location="../analysis_engine/WPSRInformationCollectorAnnotator.xml" />
+        </delegateAnalysisEngine>
+    </delegateAnalysisEngineSpecifiers>
+    <analysisEngineMetaData>
+        <name>WPSRAnalysisEngineDescriptor</name>
+        <description></description>
+        <version>1.0</version>
+        <vendor></vendor>
+        <configurationParameters searchStrategy="language_fallback" />
+        <configurationParameterSettings />
+        <flowConstraints>
+            <fixedFlow>
+                <node>WPSRInformationCollectorAnnotator</node>
+                <node>WPSRInformationEvaluatorAnnotator</node>
+            </fixedFlow>
+        </flowConstraints>
+        <typePriorities />
+        <fsIndexCollection />
+        <capabilities>
+            <capability>
+                <inputs />
+                <outputs>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFGeneric</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFSearch</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFIdent</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFNavigation</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFTree</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFTab</type>
+                </outputs>
+                <languagesSupported />
+            </capability>
+        </capabilities>
+        <operationalProperties>
+            <modifiesCas>true</modifiesCas>
+            <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+            <outputsNewCASes>false</outputsNewCASes>
+        </operationalProperties>
+    </analysisEngineMetaData>
+    <resourceManagerConfiguration />
+</analysisEngineDescription>

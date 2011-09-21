@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+    <primitive>true</primitive>
+    <annotatorImplementationName>wpsr.engines.annotators.WPSRInformationEvaluator</annotatorImplementationName>
+    <analysisEngineMetaData>
+        <name>WPSRAnnotator</name>
+        <description></description>
+        <version>1.0</version>
+        <vendor></vendor>
+        <configurationParameters/>
+        <configurationParameterSettings/>
+        <typeSystemDescription>
+            <imports>
+                <import location="WPSRTypeSystem.xml"/>
+            </imports>
+        </typeSystemDescription>
+        <typePriorities/>
+        <fsIndexCollection/>
+        <capabilities>
+            <capability>
+                <inputs>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFGeneric</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFSearch</type>
+                </inputs>
+                <outputs>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFGeneric</type>
+                    <type allAnnotatorFeatures="true">wpsr.engines.types.RDFSearch</type>
+                </outputs>
+                <languagesSupported/>
+            </capability>
+        </capabilities>
+        <operationalProperties>
+            <modifiesCas>true</modifiesCas>
+            <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+            <outputsNewCASes>false</outputsNewCASes>
+        </operationalProperties>
+    </analysisEngineMetaData>
+    <externalResourceDependencies>
+        <externalResourceDependency>
+            <key>NNList_Search_Positive</key>
+            <description></description>
+            <interfaceName>wpsr.readers.INNListReader</interfaceName>
+            <optional>false</optional>
+        </externalResourceDependency>
+        <externalResourceDependency>
+            <key>NNList_Search_Negative</key>
+            <description></description>
+            <interfaceName>wpsr.readers.INNListReader</interfaceName>
+            <optional>false</optional>
+        </externalResourceDependency>
+    </externalResourceDependencies>
+    <resourceManagerConfiguration>
+        <externalResources>
+            <externalResource>
+                <name>NNList_Search_Positive</name>
+                <description></description>
+                <fileResourceSpecifier>
+                    <fileUrl>wpsr/resources/nnlists/searchbox/positive.list</fileUrl>
+                </fileResourceSpecifier>
+                <implementationName>wpsr.readers.NNListReader</implementationName>
+            </externalResource>
+            <externalResource>
+                <name>NNList_Search_Negative</name>
+                <description></description>
+                <fileResourceSpecifier>
+                    <fileUrl>wpsr/resources/nnlists/searchbox/negative.list</fileUrl>
+                </fileResourceSpecifier>
+                <implementationName>wpsr.readers.NNListReader</implementationName>
+            </externalResource>
+        </externalResources>
+        <externalResourceBindings>
+            <externalResourceBinding>
+                <key>NNList_Search_Positive</key>
+                <resourceName>NNList_Search_Positive</resourceName>
+            </externalResourceBinding>
+            <externalResourceBinding>
+                <key>NNList_Search_Negative</key>
+                <resourceName>NNList_Search_Negative</resourceName>
+            </externalResourceBinding>
+        </externalResourceBindings>
+    </resourceManagerConfiguration>
+</analysisEngineDescription>

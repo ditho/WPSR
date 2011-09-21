@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf [
+<!ENTITY tabbox.pos.regex "(tabbox|multibox)">
+<!ENTITY tabbox.neg.regex "search">
+<!ENTITY tabs.pos.regex "tabs">
+<!ENTITY tabs.neg.regex "search">
+<!ENTITY tab.pos.regex "(tab[^pbs]|contentnav)">
+<!ENTITY tab.neg.regex "search">
+<!ENTITY tabpanels.pos.regex "tabpanels">
+<!ENTITY tabpanles.neg.regex "search">
+<!ENTITY tabpanel.pos.regex "(tabpanel[^s]|boxcontent|contentbox)">
+<!ENTITY tabpanel.neg.regex "search">
+]>
+<rdf:RDF xml:base="http://www.wpsr.org/positive"
+    xmlns:wpsr="http://www.wpsr.org/"
+    xmlns:pos="http://www.wpsr.org/positive#"
+    xmlns:neg="http://www.wpsr.org/negative#"
+    xmlns:em="http://www.wpsr.org/exactmatch#"
+    xmlns:ont="http://schemas/website/elements#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <rdf:Description rdf:about="#tabbox">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//div"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Bag>
+                <rdf:li rdf:resource="#tabs"/>
+                <rdf:li rdf:resource="#tabpanels"/>
+            </rdf:Bag>
+        </ont:children>
+        <ont:id pos:regex="&tabbox.pos.regex;" neg:regex="&tabbox.neg.regex;"/>
+        <ont:class pos:regex="&tabbox.pos.regex;" neg:regex="&tabbox.neg.regex;"/>
+        <ont:title pos:regex="&tabbox.pos.regex;" neg:regex="&tabbox.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#tabbox"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#tabs">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//ul | //ol"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description rdf:about="#tab"/>
+        </ont:children>
+        <ont:id pos:regex="&tabs.pos.regex;" neg:regex="&tabs.neg.regex;"/>
+        <ont:class pos:regex="&tabs.pos.regex;" neg:regex="&tabs.neg.regex;"/>
+        <ont:title pos:regex="&tabs.pos.regex;" neg:regex="&tabs.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#tabpanels">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//ul | //ol"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description rdf:about="#tabpanel"/>
+        </ont:children>
+        <ont:id pos:regex="&tabpanels.pos.regex;" neg:regex="&tabpanles.neg.regex;"/>
+        <ont:class pos:regex="&tabpanels.pos.regex;" neg:regex="&tabpanles.neg.regex;"/>
+        <ont:title pos:regex="&tabpanels.pos.regex;" neg:regex="&tabpanles.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#tabpanel">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//li"/>
+        </rdf:type>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#tabpanel"/>
+        <ont:id pos:regex="&tabpanel.pos.regex;" neg:regex="&tabpanel.neg.regex;"/>
+        <ont:class pos:regex="&tabpanel.pos.regex;" neg:regex="&tabpanel.neg.regex;"/>
+        <ont:title pos:regex="&tabpanel.pos.regex;" neg:regex="&tabpanel.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#tabpanel"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#tab">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//li"/>
+        </rdf:type>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#tab"/>
+        <ont:id pos:regex="&tab.pos.regex;" neg:regex="&tab.neg.regex;"/>
+        <ont:class pos:regex="&tab.pos.regex;" neg:regex="&tab.neg.regex;"/>
+        <ont:title pos:regex="&tab.pos.regex;" neg:regex="&tab.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#tab"/>
+    </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf [
+<!ENTITY login.pos.regex "(account|anmelden|einlo[g]?gen|log+[\s]*[i]?n|[^a-zA-Z]s[i]?gn*[\s]*(up|in|out|\z)|p(as[s]?(w|\z|\s)|wd))">
+<!ENTITY login.neg.regex "(s(u|[e]?[a]?r)ch|f[i]?nd|q)">
+]>
+<rdf:RDF xml:base="http://www.wpsr.org/positive"
+    xmlns:wpsr="http://www.wpsr.org/"
+    xmlns:pos="http://www.wpsr.org/positive#"
+    xmlns:neg="http://www.wpsr.org/negative#"
+    xmlns:em="http://www.wpsr.org/exactmatch#"
+    xmlns:ont="http://schemas/website/elements#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <rdf:Description rdf:about="#LoginForm">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//form"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Bag>
+                <rdf:li rdf:resource="#LoginInputUser"/>
+                <rdf:li rdf:resource="http://www.wpsr.org/exactmatch#LoginInputPassword"/>
+                <rdf:li>
+                    <rdf:Alt>
+                        <rdf:li rdf:resource="#LoginLabel"/>
+                        <rdf:li rdf:resource="#LoginInputButton"/>
+                        <rdf:li rdf:resource="#LoginInputSubmit"/>
+                        <rdf:li rdf:resource="#LoginInputImage"/>
+                        <rdf:li rdf:resource="#LoginA"/>
+                        <rdf:li rdf:resource="#LoginButton"/>
+                    </rdf:Alt>
+                </rdf:li>
+            </rdf:Bag>
+        </ont:children>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#ident"/>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:action pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#ident"/>
+    </rdf:Description>
+        <rdf:Description rdf:about="#LoginInputUser">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='text' or not(@type)]"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:value pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:alt pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:formaction pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:src pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+        <rdf:Description rdf:about="http://www.wpsr.org/exactmatch#LoginInputPassword">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='password']"/>
+        </rdf:type>
+        <ont:maxCardinality>1</ont:maxCardinality>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:value pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:alt pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:formaction pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:src pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginLabel">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//label"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:for pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:elementValue pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginInputButton">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='button']"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:value pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:alt pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:formaction pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:src pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginInputSubmit">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='submit']"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:value pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:alt pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:formaction pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:src pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginInputImage">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='image']"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:value pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:alt pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:formaction pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:src pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginA">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//a"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description>
+                <rdf:_1>
+                    <rdf:Description rdf:about="#LoginImg"/>
+                </rdf:_1>
+                <rdf:type>
+                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+                </rdf:type>
+            </rdf:Description>
+        </ont:children>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#ident"/>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:href pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:elementValue pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#ident"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginImg">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//img"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:alt pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:src pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:usemap pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#LoginButton">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//button[@type='submit']"/>
+        </rdf:type>
+        <ont:id pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:title pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:class pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:name pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:value pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:form pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+        <ont:formaction pos:regex="&login.pos.regex;" neg:regex="&login.neg.regex;"/>
+    </rdf:Description>
+</rdf:RDF>

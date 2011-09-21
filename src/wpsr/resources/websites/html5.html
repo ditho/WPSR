@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xml:base="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>
+    ISWAS: Firefox Erweiterung</title>
+<meta name="DISCRIPTION" content="Intelligent Semantic Web Accessibility Search" />
+<meta name="KEYWORDS" content="Semantik, ISWAS, Accessibility" />
+<meta name="robots" content="index, follow" />
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1"/>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Style-Type" content="application/x-httpd-php" />
+<link rel="stylesheet" type="text/css" href="skin/default/default.css" media="screen,projection" />        <script type="text/javascript" src="content/javascript/FormValidation.js"></script>
+        <script type="text/javascript" src="content/javascript/AbstractWebsite.js"></script>
+    </head>
+    <body>
+        <div id="container">
+        <div id="banner">
+    <a href="#firstContent" title="Banner, Suchbereich und Navigation ueberspringen.">Skip</a>
+    <img src="skin/global/gnome/iswas.png"
+         alt="Logo finden von: Suchfeld, Loginbereich, Artikelbrowsing und dem Kontaktbereich"/>
+    <h1>Integrated Semantic Web Accessibility Search</h1>
+    <h2>Diplomarbeit von Thomas Beer</h2>
+</div><div id="search">
+    <form id="searchform" action="#searchform" method="post">
+        <fieldset id="searchFieldSet">
+            <label for="query">Artikelsuche:</label>
+            <input id="query" type="search" value="" required="true" />
+            <input id="submitSearch" type="submit" value="Suchen" title="Die Suche nach Artikeln starten"/>
+        </fieldset>
+    </form>
+</div>
+<nav>
+    <ul>
+        <li><a href="index.php?kategorie_ID=1"  title="Artikel der Willkommensseite anzeigen">Start</a></li>
+        <li><a href="index.php?kategorie_ID=2" id="current" title="Artikel der Firefox-Erweiterung anzeigen">ISWAS</a></li>
+        <li><a href="index.php?kategorie_ID=3"  title="Gaestebucheintraege anzeigen">Gaestebuch</a></li>
+        <li><a href="index.php?kategorie_ID=4"  title="mit den Autoren dieser Seite in Kontakt treten.">Kontakt</a></li>
+    </ul>
+</nav>            <div id="content">
+                <p class="info">
+Diese Seite zeigt eine kurze Beschreibung der Firefox-Erweiterung ISWAS, als auch semantische Konstrukte, welche von der Erweiterung gefunden und aufbereitet werden. Jeder Bereich wird doppelt abgebildet, damit ein vorher/nacher Vergleich möglich ist.</p>
+                <div class="subject">
+                    <article>
+    <header>
+        <h1 id="firstContent">ISWAS</h1>
+    </header>
+    <blockquote>
+        <p>So einfach wie moeglich. Aber nicht einfacher!
+            <cite>
+                Albert Einstein, dt.-amerik. Physiker
+            </cite>
+        </p>
+    </blockquote>
+</article>                </div>
+                <div class="subject">
+<article>
+<header>
+<h2>
+Firefox-Erweiterung: Einführun<time pubdate class="date">
+20.1.11 18:31</time>
+</h2>
+</header>
+<p>
+ISWAS ist eine Firefox-Erweiterung und untersucht Webseiten auf semantische Beziehungen. <br /><br />Die Konzepte zur Suche von semantischen Konstrukten gehen aus der Diplomarbeit von Mathias Köhnke hervor. Dabei wurde ein sogenan ... </p>
+<footer><dl><dt><img src="skin/global/gnome/32/mail-read.png" alt="mehr" /></dt>
+<dd><a href="index.php?setContentID=1&amp;content_ID=25&amp;kategorie_ID=2" title="Den Artikel vollstaendig anzeigen.">mehr...</a></dd></dl></footer></article>
+</div>
+<form id="login" action="#login" method="post">
+    <fieldset>
+        <legend>Loginbereich ohne WAI-ARIA</legend>
+        <label for="userOWAI">Benutzer*:</label>
+        <input id="userOWAI" type="text" value="" required="true" />
+        <label for="pwdOWAI">Passwort*:</label>
+        <input id="pwdOWAI" type="password" value="" required="true" />
+        <label for="submitLoginOWAI"></label>
+        <input id="submitLoginOWAI" type="submit" value="Anmelden" disabled="true" title="ohne WAI-ARIA anmelden"/>
+    </fieldset>
+</form>
+<form id="loginWAI" action="#loginWAI" method="post" role="ident">
+    <fieldset>
+        <legend>Loginbereich mit WAI-ARIA</legend>
+        <label for="userWAI">Benutzer*:</label>
+        <input id="userWAI" type="text" value="" required="true" />
+        <label for="pwdWAI">Passwort*:</label>
+        <input id="pwdWAI" type="password" value="" required="true" />
+        <label for="submitLoginWAI"></label>
+        <input id="submitLoginWAI" type="submit" value="Anmelden" disabled="true" title="mit WAI-ARIA anmelden"/>
+    </fieldset>
+</form>
+<form id="searchOWAI" action="#searchOWAI" method="post">
+    <fieldset>
+        <legend>Suchbereich ohne WAI-ARIA</legend>
+        <label for="queryOWAI">Suchen*:</label>
+        <input id="queryOWAI" type="text" value="" required="true" />
+        <label for="submitQueryOWAI"></label>
+        <input id="submitQueryOWAI" type="submit" value="Suchen" disabled="true" title="Ganz viel ohne WAI-ARIA suchen"/>
+    </fieldset>
+</form>
+<form id="searchWAI" action="#searchWAI" method="post" role="search">
+    <fieldset>
+        <legend>Suchbereich mit WAI-ARIA</legend>
+        <label for="queryWAI">Suchen*:</label>
+        <input id="queryWAI" type="text" value=""/>
+        <label for="submitQueryWAI"></label>
+        <input id="submitQueryWAI" type="submit" value="Suchen" disabled="true" title="Ganz viel mit WAI-ARIA suchen"/>
+    </fieldset>
+</form>                <div class="floatBreak"></div>
+            </div>
+                        <div id="w3c">
+                <ul>
+    <li>
+        <a href="http://validator.w3.org/check?uri=referer" title="Diese Seite auf W3C XHTML 1.0 Strict konformitaet validieren.">
+            <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" id="xhtml"/>
+        </a>
+    </li>
+    <li>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Die Stylesheetdateien dieser Seite auf W3C CSS konformitaet validieren.">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" id="css"/>
+        </a>
+    </li>
+</ul>
+
+
+            </div>
+            <footer>
+                <ul>
+    <li>
+        <a href="index.php?kategorie_ID=5" title="Informationen ueber den Autor und Lizenzenbestimmungen anzeigen">Ueber ISWAS</a>
+    </li>
+    <li>
+        <a href="admin/index.php?kategorie_ID=1&amp;content=true&amp;edit=false&amp;list=true" title="Den Inhalt dieser Seite mit einem CMS beabeiten">Administration</a>
+    </li>
+</ul>
+            </footer>
+        </div>
+    </body>
+</html>

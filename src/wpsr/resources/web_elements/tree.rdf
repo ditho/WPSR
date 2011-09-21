@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<rdf:RDF xml:base="http://www.wpsr.org/positive"
+    xmlns:wpsr="http://www.wpsr.org/"
+    xmlns:pos="http://www.wpsr.org/positive#"
+    xmlns:neg="http://www.wpsr.org/negative#"
+    xmlns:em="http://www.wpsr.org/exactmatch#"
+    xmlns:ont="http://schemas/website/elements#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <rdf:Description rdf:about="#tree">
+        <rdf:type>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#genericElement"/>
+                <rdf:li rdf:resource="#list"/>
+            </rdf:Alt>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description rdf:about="#treeitem"/>
+        </ont:children>
+        <ont:id pos:regex="" neg:regex=""/>
+        <ont:class pos:regex="" neg:regex=""/>
+        <ont:title pos:regex="" neg:regex=""/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#tree"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#genericElement">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//div"/>
+        </rdf:type>
+    </rdf:Description>
+    <rdf:Description rdf:about="#list">
+        <rdf:type>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#unorderedList"/>
+                <rdf:li rdf:resource="#orderedList"/>
+            </rdf:Alt>
+        </rdf:type>
+        <ont:children>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#listitem"/>
+                <rdf:li rdf:resource="#list"/>
+            </rdf:Alt>
+        </ont:children>
+    </rdf:Description>
+    <rdf:Description rdf:about="#unorderedList">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//ul"/>
+        </rdf:type>
+    </rdf:Description>
+    <rdf:Description rdf:about="#orderedList">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//ol"/>
+        </rdf:type>
+    </rdf:Description>
+    <rdf:Description rdf:about="#listitem">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//li"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#atomicElement"/>
+                <rdf:li rdf:resource="#list"/>
+            </rdf:Alt>
+        </ont:children>
+        <ont:id pos:regex="" neg:regex=""/>
+        <ont:class pos:regex="" neg:regex=""/>
+        <ont:title pos:regex="" neg:regex=""/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#atomicElement">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//a"/>
+        </rdf:type>
+        <ont:id pos:regex="" neg:regex=""/>
+        <ont:class pos:regex="" neg:regex=""/>
+        <ont:href pos:regex="" neg:regex=""/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#treeitem">
+        <rdf:type>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#genericElement"/>
+                <rdf:li rdf:resource="#list"/>
+            </rdf:Alt>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description rdf:about="#group"/>
+        </ont:children>
+        <ont:id pos:regex="" neg:regex=""/>
+        <ont:class pos:regex="" neg:regex=""/>
+        <ont:title pos:regex="" neg:regex=""/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#treeitem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#group">
+        <rdf:type>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#genericElement"/>
+                <rdf:li rdf:resource="#list"/>
+            </rdf:Alt>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description rdf:about="#treeitem"/>
+        </ont:children>
+        <ont:id pos:regex="" neg:regex=""/>
+        <ont:class pos:regex="" neg:regex=""/>
+        <ont:title pos:regex="" neg:regex=""/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#group"/>
+    </rdf:Description>
+</rdf:RDF>

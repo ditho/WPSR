@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf [
+<!ENTITY nav.pos.regex "(nav|menu)">
+<!ENTITY nav.neg.regex "(item|search|login)">
+]>
+<rdf:RDF xml:base="http://www.wpsr.org/positive"
+    xmlns:wpsr="http://www.wpsr.org/"
+    xmlns:pos="http://www.wpsr.org/positive#"
+    xmlns:neg="http://www.wpsr.org/negative#"
+    xmlns:em="http://www.wpsr.org/exactmatch#"
+    xmlns:ont="http://schemas/website/elements#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <rdf:Description rdf:about="#Navigation">
+        <rdf:type>
+            <rdf:Alt>
+                <rdf:li rdf:resource="http://www.wpsr.org/exactmatch#NAVElement"/>
+                <rdf:li rdf:resource="#NavDIV" />
+                <rdf:li rdf:resource="#NavList"/>
+            </rdf:Alt>
+        </rdf:type>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#navigation"/>
+        <ont:id pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <ont:class pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <ont:title pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#navigation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.wpsr.org/exactmatch#NavElement">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//nav"/>
+        </rdf:type>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NavDIV">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//div"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#NavDIV"/>
+                <rdf:li rdf:resource="#NavList"/>
+                <rdf:li rdf:resource="#NavA"/>
+            </rdf:Alt>
+        </ont:children>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#navigation"/>
+        <ont:id pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <ont:class pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <ont:title pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#navigation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NavList">
+        <rdf:type>
+            <rdf:Alt>
+                <rdf:li rdf:resource="http://schemas/website/elements#//ol"/>
+                <rdf:li rdf:resource="http://schemas/website/elements#//ul"/>
+            </rdf:Alt>
+        </rdf:type>
+        <ont:children>
+            <rdf:Alt>
+                <rdf:li rdf:resource="#NavLI"/>
+                <rdf:li rdf:resource="#NavList" />
+            </rdf:Alt>
+        </ont:children>
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#navigation"/>
+        <ont:id pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <ont:class pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <ont:title pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#navigation"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NavLI">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//li"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description rdf:about="#NavA"/>
+        </ont:children>
+        <ont:value pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#NavA">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//a"/>
+        </rdf:type>
+        <ont:href pos:regex="&nav.pos.regex;" neg:regex="&nav.neg.regex;"/>
+    </rdf:Description>
+</rdf:RDF>

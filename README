@@ -1,0 +1,3 @@
+The Web Pattern Structure Recognizer (WPSR) process the semantic of any website. The processing based on the Resource Description Framework 
+(RDF) recommended by the World Wide Web Consortium (W3C). The architecture of WPSR based on the Unstructured Information Management 
+Architecture (UIMA) developed by The Apache Foundation.

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf [
+<!ENTITY search.pos.regex "(s(u|[e]?[a]?r)ch|f[i]?nd|q(\z|uer[y]?))">
+<!ENTITY search.neg.regex "(account|anmelden|einlo[g]?gen|log[i]?n|s[i]?gn|us[e]?r|p(ass|wd))">
+]>
+<rdf:RDF xml:base="http://www.wpsr.org/positive"
+    xmlns:wpsr="http://www.wpsr.org/"
+    xmlns:pos="http://www.wpsr.org/positive#"
+    xmlns:neg="http://www.wpsr.org/negative#"
+    xmlns:em="http://www.wpsr.org/exactmatch#"
+    xmlns:ont="http://schemas/website/elements#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <rdf:Description rdf:about="#SearchForm">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//form"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Bag>
+                <rdf:li>
+                    <rdf:Alt>
+                        <rdf:li rdf:resource="http://www.wpsr.org/exactmatch#SearchInputSearch"/>
+                        <rdf:li rdf:resource="#SearchInputText"/>
+                    </rdf:Alt>
+                </rdf:li>
+                <rdf:li>
+                    <rdf:Alt>
+                        <rdf:li rdf:resource="#SearchLabel"/>
+                        <rdf:li rdf:resource="#SearchInputSubmit"/>
+                        <rdf:li rdf:resource="#SearchInputButton"/>
+                        <rdf:li rdf:resource="#SearchInputImage"/>
+                        <rdf:li rdf:resource="#SearchA"/>
+                        <rdf:li rdf:resource="#SearchButton"/>
+                    </rdf:Alt>
+                </rdf:li>
+                <rdf:li rdf:resource="http://www.wpsr.org/negative#InputPassword"/>
+            </rdf:Bag>
+        </ont:children>
+        <!-- exact match if a role is set by this value -->
+        <em:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#search"/>
+        <!-- property predicates to classify one candidate -->
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:name pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:action pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <!-- roles to add if the analysis match this structure -->
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#search"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.wpsr.org/negative#InputPassword">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='password']"/>
+        </rdf:type>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.wpsr.org/exactmatch#SearchInputSearch">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='search']"/>
+        </rdf:type>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchInputText">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='text' or not(@type)]"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:name pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:value pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:alt pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:form pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:formaction pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchLabel">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//label"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:for pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:form pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:elementValue pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchInputButton">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='button']"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:name pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:value pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:alt pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:form pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:formaction pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:src pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchInputSubmit">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='submit']"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:name pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:value pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:alt pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:form pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:formaction pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchInputImage">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//input[@type='image']"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:name pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:value pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:alt pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:form pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:formaction pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchA">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//a"/>
+        </rdf:type>
+        <ont:children>
+            <rdf:Description>
+                <rdf:_1>
+                    <rdf:Description rdf:about="#SearchImg"/>
+                </rdf:_1>
+                <rdf:type>
+                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+                </rdf:type>
+            </rdf:Description>
+        </ont:children>
+        <em:rel rdf:resource="http://www.w3.org/TR/wai-aria/roles#search"/>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:href pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:elementValue pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <wpsr:role rdf:resource="http://www.w3.org/TR/wai-aria/roles#search"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchImg">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//img"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:alt pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:src pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:usemap pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SearchButton">
+        <rdf:type>
+            <rdf:Description rdf:about="http://schemas/website/elements#//button[@type='submit']"/>
+        </rdf:type>
+        <ont:id pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:title pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:class pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:name pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:value pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:form pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+        <ont:formaction pos:regex="&search.pos.regex;" neg:regex="&search.neg.regex;"/>
+    </rdf:Description>
+</rdf:RDF>

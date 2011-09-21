@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
+    "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de">
+    <head>
+        <title>
+    ISWAS: Firefox Erweiterung</title>
+<meta name="Programmierung" content="THOMAS BEER" />
+<meta name="DISCRIPTION" content="Intelligent Semantic Web Accessibility Search" />
+<meta name="KEYWORDS" content="Semantik, ISWAS, Accessibility" />
+<meta name="robots" content="index, follow" />
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1"/>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Style-Type" content="application/x-httpd-php" />
+<link rel="stylesheet" type="text/css" href="skin/default/default.css" media="screen,projection" title="Default"/>        <script type="text/javascript" src="content/javascript/FormValidation.js"></script>
+        <script type="text/javascript" src="content/javascript/AbstractWebsite.js"></script>
+        <script type="text/javascript" src="content/javascript/tab.js"></script>
+    </head>
+    <body>
+        <div id="container">
+        <div id="banner">
+    <a href="#firstContent" title="zum Inhalt springen">Skip</a>
+    <img src="skin/global/gnome/iswas.png"
+         alt="Finden von Konstrukten auf Webseiten"/>
+    <h1>Integrated Semantic Web Accessibility Search (ISWAS)</h1>
+    <h2>Diplomarbeit von Thomas Beer</h2>
+</div><div id="search">
+    <form id="searchform" action="#searchform" method="post">
+        <fieldset id="searchFieldSet">          
+            <label for="query">Artikelsuche:</label>
+            <input id="query" type="text" required="true" />
+            <input id="submitSearch" type="submit" value="Suchen" title="Suche nach Artikeln"/>
+        </fieldset>
+    </form>
+</div>
+<div id="navigation">
+    <ul>
+        <li><a href="index.php?kategorie_ID=1"  title="Artikel der Willkommensseite anzeigen">Start</a></li>
+        <li><a href="index.php?kategorie_ID=2" id="current" title="Artikel der Firefox-Erweiterung anzeigen">ISWAS</a></li>
+        <li><a href="index.php?kategorie_ID=3"  title="Gaestebucheintraege anzeigen">Gaestebuch</a></li>
+        <li><a href="index.php?kategorie_ID=4"  title="mit den Autoren dieser Seite in Kontakt treten.">Kontakt</a></li>
+    </ul>
+</div>            <div id="content">
+                <p class="info">
+Die Seite enthält eine kurze Beschreibung der Firefox-Erweiterung, sowie Inhalte die mit dem Addon getestet werden können.</p>
+<p class="info">
+Der Test bezieht sich auf Webinhalte die mit und ohne WAI-ARIA ausgezeichnet worden sind. Dies ermöglicht den Vorher-Nachher-Vergleich.</p>
+                <div class="subject">
+                    <h1 id="firstContent">ISWAS</h1>
+<blockquote>
+    <p>So einfach wie möglich. Aber nicht einfacher!
+        <cite>
+            Albert Einstein, dt.-amerik. Physiker
+        </cite>
+    </p>
+</blockquote>                </div>
+                <div class="subject">
+<h2>Firefox-Erweiterung: Kurze Einführung</h2>
+<p>ISWAS ist ein Firefox-Addon und untersucht semantische Beziehungen von Webinhalten. Die gefundenen Inhalte werden mit WAI-ARIA aufbereitet. WAI-ARIA ist eine Spezifikation vom W3C, die es ermöglicht, die Semantik von Webinhalten z ...</p><div><a href="index.php?setContentID=1&amp;content_ID=25&amp;kategorie_ID=2" title="Artikel anzeigen."><img src="skin/global/gnome/32/mail-read.png" alt="Artikel anzeigen"/></a></div>
+        <ul class="thumbSet">
+           <li>
+                <a href="content/body/galerie.php?picture_name=1305647979menu.jpg&amp;content_ID=25">
+                <img src="images/thumbs/1305647979menu.jpg" alt="" title="Dieses Bild in der Bildergalerie oeffnen."/></a>
+            </li>
+                    <li>
+                <a href="content/body/galerie.php?picture_name=1305647980sidebar.jpg&amp;content_ID=25">
+                <img src="images/thumbs/1305647980sidebar.jpg" alt="" title="Dieses Bild in der Bildergalerie oeffnen."/></a>
+            </li>
+                 </ul>
+        </div>
+<div class="subject">
+    <h2>Webseitenelemente ohne WAI-ARIA</h2>
+    <p>Dieser Bereich zeigt Webelemente, die nicht semantisch mit WAI-ARIA
+        ausgezeichnet wurden. Dank der verwendeten Begriffe in dem HTML-Markup 
+        ist die <span xml:lang="en">Firefox</span>-Erweiterung in der Lage, die 
+        Semantik der folgenden Bereiche zu verbessern:
+    <ul>
+        <li>Ein Suchbereich zeichnet sich meist durch ein Formular mit genau 
+            einem Eingabefeld aus. Eine Vorauswahl von bestimmten Kategorien, 
+            wie z.B. eine Bücher- oder Artikelsuche, ist ebenfalls denkbar.</li>
+        <li>Ein Loginbereich besteht aus einem Eingabefeld für einen registrierten 
+            Benutzer und einem Eingabefeld für das selbst gewählte Passwort zur 
+            Authentifikation. Alternativ kann ein verborgener Loginbereich durch 
+            einen Link repräsentiert werden.</li>
+        <li>Eine Tabbox ist ein dynamisches Element und enthält typischerweise 
+            Registerkarten, welche die Anzeige einzelner Inhalte steuern.</li>
+        <li>Ein <span xml:lang="en">Tree</span> ist eine dynamische bzw. 
+            listenartige Baumansicht, welche zur schnellen Seitennavigation
+            verwendet werden kann.</li>
+    </ul>
+    Die nun folgenden Inhalte präsentieren die einzelnen Bereiche. Man bedenke, dass
+    diese Beispiele nur strukturell implementiert wurden und daher keine weitere
+    Bedeutung oder Funktion aufweisen. Die dynamischen Elemente wurden nur visuell
+    aufbereitet und sind daher nicht sehr zugänglich gestaltet. Die Annotation mittels
+    WAI-ARIA mit einer anschließenden Transformation in die Markupsprache XUL kann diese
+    Elemente verfügbar machen. Um die Transformation zu aktivieren, muss zunächst das
+    <span xml:lang="en">Firefox-Addon</span>
+    <a href="https://addons.mozilla.org/de/firefox/addon/remote-xul-manager/" title="Addon um XUL zu aktivieren"><span xml:lang="en">Remote XUL Manager</span></a>
+    installiert und die Testseite auf die <span xml:lang="en">Whitelist</span> des
+    <span xml:lang="en">XUL-Managers</span> gesetzt werden. In einer späteren Version
+    des <span xml:lang="en">Addons</span> wird dieser Schritt nicht mehr notwendig sein.
+</p>
+<h3>Präsentation eines Suchbereiches ohne Auszeichnungen</h3>
+<form id="searchOWAI" action="#searchOWAI" method="post">
+    <fieldset>
+        <legend>Artikelsuche ohne WAI-ARIA</legend>
+        <label for="queryOWAI">Suchbegriff*:</label>
+        <input id="queryOWAI" type="text" title="Artikelsuche ohne WAI-ARIA" required="true" />
+        <label for="submitQueryOWAI"></label>
+        <input id="submitQueryOWAI" type="submit" value="Suchen" title="Suche nach Artikeln starten"/>
+    </fieldset>
+</form>
+<h3>Präsentation eines Loginbereiches ohne Auszeichnungen</h3>
+<form id="login" action="#login" method="post">
+    <fieldset>
+        <legend>Loginbereich ohne WAI-ARIA</legend>
+        <label for="userOWAI">Benutzer*:</label>
+        <input id="userOWAI" type="text" required="true" title="Ihre E-Mail-Adresse" />
+        <label for="pwdOWAI">Passwort*:</label>
+        <input id="pwdOWAI" type="password" required="true" />
+        <label for="submitLoginOWAI"></label>
+        <input id="submitLoginOWAI" type="submit" value="Anmelden" title="anmelden"/>
+    </fieldset>
+</form>
+<h3>Präsentation einer Tabbox ohne Auszeichnungen</h3>
+<div id="tabbox">
+    <ul id="tabs">
+        <li id="tab1">Vorschau</li>
+        <li id="tab2">Quelltext</li>
+        <li id="tab3">Anmerkungen</li>
+    </ul>
+    <div class="floatBreak"></div>
+    <ul id="tabpanels">
+        <li id="tabpanel1"><p>Erstes Tabpanel <strong>ohne</strong> WAI-ARIA</p></li>
+        <li id="tabpanel2"><p>Zweites Tabpanel <strong>ohne</strong> WAI-ARIA</p></li>
+        <li id="tabpanel3"><p>Drittes Tabpanel <strong>ohne</strong> WAI-ARIA</p></li>
+    </ul>
+</div>
+<h3>Präsentation eines dynamischen Baumes ohne Auszeichnungen</h3>
+<ul id="tree">
+    <li class="treeitem">
+        <span id="a1">Knoten der Ebene 1</span>
+        <ul class="group">
+            <li class="treeitem">
+                <span id="a11">Knoten der Ebene 1.1</span>
+                <ul class="group">
+                    <li class="treeitem">
+                        <span id="a111">Blattknoten der Ebene 1.1.1</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="treeitem">
+        <span id="b1">Blattknoten der Ebene 1</span>
+    </li>
+</ul>
+</div>
+<!-- next Subject -->
+<div class="subject">
+    <h2>Webseitenelemente mit WAI-ARIA</h2>
+    <p>Dieser Bereich zeigt Webelemente, die bereits mit WAI-ARIA semantisch 
+        ausgezeichnet wurden. Durch die Auszeichnung kann die 
+        <span xml:lang="en">Firefox</span>-Erweiterung die folgenden Bereiche
+        sehr genau erkennen:
+    <ul>
+        <li>Ein Suchbereich zeichnet sich meist durch ein Formular mit genau 
+            einem Eingabefeld aus. Eine Vorauswahl von bestimmten Kategorien, 
+            wie z.B. eine Bücher- oder Artikelsuche, ist ebenfalls denkbar.</li>
+        <li>Ein Loginbereich besteht aus einem Eingabefeld für einen registrierten 
+            Benutzer und einem Eingabefeld für das selbst gewählte Passwort zur 
+            Authentifikation. Alternativ kann ein verborgener Loginbereich durch 
+            einen Link repräsentiert werden.</li>
+        <li>Eine Tabbox ist ein dynamisches Element und enthält typischerweise 
+            Registerkarten, welche die Anzeige einzelner Inhalte steuern.</li>
+        <li>Ein <span xml:lang="en">Tree</span> ist eine dynamische bzw. 
+            listenartige Baumansicht, welche zur schnellen Seitennavigation
+            verwendet werden kann.</li>
+    </ul>
+    Die nun folgenden Inhalte präsentieren die einzelnen Bereiche. Man bedenke, dass
+    diese Beispiele nur strukturell implementiert wurden und daher keine weitere
+    Bedeutung oder Funktion aufweisen. Die dynamischen Elemente wurden nur visuell
+    aufbereitet und sind daher nicht sehr zugänglich gestaltet. Die Transformation
+    in die Markupsprache XUL kann die Elemente weiter verbessern. Um die Transformation
+    zu aktivieren, muss zunächst das <span xml:lang="en">Firefox-Addon</span>
+    <a href="https://addons.mozilla.org/de/firefox/addon/remote-xul-manager/" title="Addon um XUL zu aktivieren"><span xml:lang="en">Remote XUL Manager</span></a>
+    installiert und die Testseite auf die <span xml:lang="en">Whitelist</span> des
+    <span xml:lang="en">XUL-Managers</span> gesetzt werden. In einer späteren Version
+    des <span xml:lang="en">Addons</span> wird dieser Schritt nicht mehr notwendig sein.
+</p>
+<h3>Präsentation eines Suchbereiches mit WAI-ARIA</h3>
+<form id="searchWAI" action="#searchWAI" method="post" role="search">
+    <fieldset>
+        <legend>Artikelsuche mit WAI-ARIA</legend>
+        <label for="queryWAI">Suchen*:</label>
+        <input id="queryWAI" type="text" title="Artikelsuche mit WAI-ARIA" value=""/>
+        <label for="submitQueryWAI"></label>
+        <input id="submitQueryWAI" type="submit" value="Suchen" title="Ganz viel mit WAI-ARIA suchen"/>
+    </fieldset>
+</form>
+<h3>Präsentation eines Loginbereiches mit WAI-ARIA</h3>
+<form id="loginWAI" action="#loginWAI" method="post" role="ident">
+    <fieldset>
+        <legend>Loginbereich mit WAI-ARIA</legend>
+        <label for="userWAI">Benutzer*:</label>
+        <input id="userWAI" type="text" title="Ihre E-mail-Adresse" required="true" />
+        <label for="pwdWAI">Passwort*:</label>
+        <input id="pwdWAI" type="password" required="true" />
+        <label for="submitLoginWAI"></label>
+        <input id="submitLoginWAI" type="submit" value="Anmelden" title="anmelden"/>
+    </fieldset>
+</form>
+<h3>Präsentation einer Tabbox mit WAI-ARIA</h3>
+<div id="tabboxWAI">
+    <ul id="tabsWAI">
+        <li id="tab1WAI" role="tab" aria-controls="tabpanel1WAI">Vorschau</li>
+        <li id="tab2WAI" role="tab" aria-controls="tabpanel2WAI">Quelltext</li>
+        <li id="tab3WAI" role="tab" aria-controls="tabpanel3WAI">Anmerkungen</li>
+    </ul>
+    <div class="floatBreak"></div>
+    <ul id="tabpanelsWAI">
+        <li id="tabpanel1WAI" role="tabpanel"><p>Erstes Tabpanel <strong>mit</strong> WAI-ARIA</p></li>
+        <li id="tabpanel2WAI" role="tabpanel"><p>Zweites Tabpanel <strong>mit</strong> WAI-ARIA</p></li>
+        <li id="tabpanel3WAI" role="tabpanel"><p>Drittes Tabpanel <strong>mit</strong> WAI-ARIA</p></li>
+    </ul>
+</div>
+<h3>Präsentation eines dynamischen Baumes mit WAI-ARIA</h3>
+<ul id="treeWAI" role="tree">
+    <li role="treeitem" aria-haspopup="true" aria-controls="a1WAI">
+        <span id="a1WAI">Knoten der Ebene 1</span>
+        <ul role="group">
+            <li role="treeitem" aria-haspopup="true" aria-controls="a11WAI">
+                <span id="a11WAI">Knoten der Ebene 1.1</span>
+                <ul role="group">
+                    <li role="treeitem" aria-haspopup="false">
+                        <span id="a111WAI">Blattknoten der Ebene 1.1.1</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li role="treeitem" aria-haspopup="false">
+        <span id="b1WAI">Blattknoten der Ebene 1</span>
+    </li>
+</ul>
+</div>                <div class="floatBreak"></div>
+            </div>
+                        <div id="w3c">
+                <ul>
+    <li>
+        <a href="http://validator.w3.org/check?uri=referer" title="Diese Seite auf W3C XHTML 1.0 Strict konformitaet validieren.">
+            <img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" id="xhtml"/>
+        </a>
+    </li>
+    <li>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Die Stylesheetdateien dieser Seite auf W3C CSS konformitaet validieren.">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" id="css"/>
+        </a>
+    </li>
+</ul>
+
+
+            </div>
+            <div id="footer">
+                <ul>
+    <li>
+        <a href="index.php?kategorie_ID=5" title="Informationen ueber den Autor und Lizenzenbestimmungen anzeigen">Impressum</a>
+    </li>
+    <li>
+        <a href="admin/index.php?kategorie_ID=1&amp;content=true&amp;edit=false&amp;list=true" title="Den Inhalt dieser Seite mit einem CMS beabeiten">Administration</a>
+    </li>
+</ul>            </div>
+        </div>
+    </body>
+</html>
