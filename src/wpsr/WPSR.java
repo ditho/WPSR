@@ -66,8 +66,7 @@ public class WPSR {
         ArrayList<CandidateConsumer> candidateList= new ArrayList<CandidateConsumer>();
         try {
             // reading the analysisEngine from jar or resource
-            final XMLInputSource in = new XMLInputSource(
-                    WPSR.class.getResource("/wpsr/resources/analysis_engine/WPSRAnalysisEngineDescriptor.xml"));
+            final XMLInputSource in = new XMLInputSource(WPSR.class.getResource("/wpsr/resources/analysis_engine/WPSRAnalysisEngineDescriptor.xml"));
             final ResourceSpecifier aSpecifier = UIMAFramework.getXMLParser().parseResourceSpecifier(in);
             final AnalysisEngine analysisEngine = UIMAFramework.produceAnalysisEngine(aSpecifier);
             // set up information for the Common Analysis System (CAS): reduce
